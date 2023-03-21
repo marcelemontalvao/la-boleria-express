@@ -2,8 +2,8 @@ CREATE TABLE cakes (
     id SERIAL PRIMARY KEY,
     name VARCHAR,
     price NUMERIC,
-    image VARCHAR,
-    description TEXT
+    description TEXT,
+    image VARCHAR
 );
 
 CREATE TABLE clients (
@@ -23,3 +23,11 @@ CREATE TABLE orders (
     FOREIGN KEY (clientId) REFERENCES clients(id),
     FOREIGN KEY (cakeId) REFERENCES cakes(id)
 );
+
+INSERT INTO 
+    cakes (name, price, description, image) 
+VALUES 
+    ($1, $2, $3, $4) 
+
+SELECT id FROM cakes WHERE name=$1
+
