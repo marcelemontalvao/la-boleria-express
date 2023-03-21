@@ -23,4 +23,3 @@ CREATE TABLE orders (
     FOREIGN KEY (clientId) REFERENCES clients(id),
     FOREIGN KEY (cakeId) REFERENCES cakes(id)
 );
-
