@@ -1,5 +1,6 @@
 import db from "../configs/db.js";
 import cakeSchema from "../schema/cakesSchemas.js";
+import clientSchema from "../schema/clientsSchemas.js";
 
 function internalServerError(error, res) {
     console.log(error.message)
@@ -39,4 +40,15 @@ async function validateCake(req, res, next) {
     return next();
 }
 
-export { internalServerError, validateCake }
+
+async function validateClient(req, res, next) {
+    const { error } = clientSchema.validate(req.body);
+   
+    if(error) {
+        return res.status(400).send(error);
+    }
+
+    return next();
+}
+
+export { internalServerError, validateCake, validateClient }

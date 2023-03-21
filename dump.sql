@@ -31,3 +31,7 @@ VALUES
 
 SELECT id FROM cakes WHERE name=$1
 
+INSERT INTO 
+    clients (name, address, phone) 
+VALUES 
+    ($1, $2, $3) 

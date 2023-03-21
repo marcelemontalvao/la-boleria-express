@@ -11,7 +11,7 @@ async function createCake(req, res) {
             cakes (name, price, image, description) 
         VALUES 
             ($1, $2, $3, $4) 
-            `
+    `
 
     try {
         await db.query(cakeSQL, cake)
