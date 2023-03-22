@@ -5,6 +5,6 @@ const cakeSchema = Joi.object({
     price: Joi.number().positive().greater(0).required(),
     description: Joi.string().optional(),
     image: Joi.string().regex(/^(https?:\/\/)([\w-]+\.)+[\w-]+(\/[\w- ;,./?%&=]*)?\.(jpg|jpeg|png|gif|bmp)$/).required()
-})
+});
 
 export default cakeSchema;

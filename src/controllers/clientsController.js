@@ -11,13 +11,13 @@ async function createClient(req, res) {
             clients (name, address, phone) 
         VALUES 
             ($1, $2, $3) 
-    `
+    `;
 
     try {
-        await db.query(clientSQL, client)
-        return res.sendStatus(201)
+        await db.query(clientSQL, client);
+        return res.sendStatus(201);
     } catch (error) {
-        internalServerError(error, res)
+        internalServerError(error, res);
     }
 }
 

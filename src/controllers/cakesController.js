@@ -10,14 +10,14 @@ async function createCake(req, res) {
         INSERT INTO 
             cakes (name, price, image, description) 
         VALUES 
-            ($1, $2, $3, $4) 
-    `
+            ($1, $2, $3, $4)
+    `;
 
     try {
-        await db.query(cakeSQL, cake)
-        return res.sendStatus(201)
+        await db.query(cakeSQL, cake);
+        return res.sendStatus(201);
     } catch (error) {
-        internalServerError(error, res)
+        internalServerError(error, res);
     }
 }
 
