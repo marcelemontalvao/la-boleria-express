@@ -23,15 +23,3 @@ CREATE TABLE orders (
     FOREIGN KEY (clientId) REFERENCES clients(id),
     FOREIGN KEY (cakeId) REFERENCES cakes(id)
 );
-
-INSERT INTO 
-    cakes (name, price, description, image) 
-VALUES 
-    ($1, $2, $3, $4);
-
-SELECT id FROM cakes WHERE name=$1;
-
-INSERT INTO 
-    clients (name, address, phone) 
-VALUES 
-    ($1, $2, $3);

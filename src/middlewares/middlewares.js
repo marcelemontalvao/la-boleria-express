@@ -96,4 +96,4 @@ async function validateOrder(req, res, next) {
     return next();
 }
 
-export { internalServerError, validateCake, validateClient, validateOrder }
+export { internalServerError, validateCake, validateClient, validateOrder };
